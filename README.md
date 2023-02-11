@@ -20,8 +20,8 @@ The paremeters for the Microgrid are given as follows
 
 |                                     |        |                                      |       |
 |-------------------------------------|--------|--------------------------------------|-------|
-| $\rm{Line Resistance}~ (R_{\rm{mn}}) $    | 0.502  | $\rm{Line inductance}~ ($L_{\rm{mn}})$     | 0.512 |
-| $\rm{Load Resistance}~($R_{\rm{load}{n}})$ | 44.528 | $\rm{Load inductance} ~($L_{\rm{load}{n}})$ | 26.55 |
+| $\rm{Line Resistance}$ $(R_{\rm{mn}}) $    | 0.502  | $\rm{Line inductance}$ $(L_{\rm{mn}})$     | 0.512 |
+| $\rm{Load Resistance}$ $(R_{\rm{load}{n}})$ | 44.528 | $\rm{Load inductance}$ $(L_{\rm{load}{n}})$ | 26.55 |
 
 
 
