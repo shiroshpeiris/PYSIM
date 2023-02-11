@@ -44,9 +44,9 @@ The following dependencies are required for running the case files.
 * Threading
 * time
 * pyqtgraph  {0.11.0 (anaconda/noarch) 
-* pysimplegui-4.56.0 (conda-forge/noarch) 
+* pysimplegui {4.56.0 (conda-forge/noarch)}
 * pandas  {1.3.4 (defaults/win-64)}
 * sympy  {1.9 (defaults/win-64)}
-* plotly-5.5.0 (plotly/noarch)
+* plotly {5.5.0 (plotly/noarch)}
 
 
