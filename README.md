@@ -25,4 +25,6 @@ The paremeters for the Microgrid are given as follows
 
 
 
-The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances.
+The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances. The symcalc_4conv.py contains the code to generate the Matrix for 4 converter microgrid example without virtual resistances as shown in figure 1 of the Publication. 
+
+The symcalc_Generalized.py contains the code to generate the Matrix the converter system with 8 converters provided in Figure 6 of the Publication. 
