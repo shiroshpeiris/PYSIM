@@ -23,7 +23,7 @@ The parameters for the Converters are given below
 | $P\_{\rm{ref}}$ (pu)      |   0.52   | $Q\_{\rm{ref}}$ (pu) |   0.3    |
 | $\omega\_{\rm{ref}}$ (pu) |    1     | $V\_{\rm{ref}}$ (pu) |    1     |
 
-The paremeters for the Microgrid are given as follows, the paremetrs are same for all load elements and line segments
+The paremeters for the Microgrid are given as follows, the parameters are same for all load elements and line segments
 
 |                                     |        |                                      |       |
 |-------------------------------------|--------|--------------------------------------|-------|
