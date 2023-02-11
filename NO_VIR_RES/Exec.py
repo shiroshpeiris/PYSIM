@@ -31,7 +31,7 @@ sim_length = 20000
 varobs_y = 0
 varobs_x = 0
 windowlen = 50000
-delta_t = 1e-6
+delta_t = 3e-4
 plotstep = 100
 
 # --------conditional variables--------------
