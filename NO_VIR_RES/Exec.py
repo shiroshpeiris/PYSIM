@@ -3,7 +3,6 @@ from threading import Thread
 import math
 from numpy import genfromtxt
 import time
-import matplotlib.pyplot as plt
 from pyqtgraph.Qt import QtGui, QtCore
 
 from funcs import *
@@ -11,11 +10,8 @@ from param_arr import *
 from eigplot import *
 from scipy.optimize import fsolve,leastsq
 import pyqtgraph as pg
-# pg.setConfigOptions(antialias=True)
+pg.setConfigOptions(antialias=True)
 
-import control.matlab as ctl
-from control import ss
-import csv
 
 import PySimpleGUI as sg
 import pandas as pd
