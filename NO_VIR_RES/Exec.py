@@ -104,7 +104,7 @@ def systemfunc():
     Y=[]
     ploteignum = p1.plot(X, Y, symbolBrush=(0, 0, 255), symbol='o',pen=pg.mkPen(None))
 
-    plotsim1 = p2.plot(tx, out, pen=pg.mkPen('b', width=2),name = 'P1', )
+    plotsim1 = p2.plot(tx, out, pen=pg.mkPen('b', width=2),name = 'Pconv1', )
     # plotsim2 = p2.plot(tx, out, pen=pg.mkPen('g', width=2),name = 'P2')
     # plotsim3 = p2.plot(tx, out, pen=pg.mkPen('b', width=2),name = 'P3', )
     # plotsim4 = p2.plot(tx, out, pen=pg.mkPen('c', width=2),name = 'P4')
