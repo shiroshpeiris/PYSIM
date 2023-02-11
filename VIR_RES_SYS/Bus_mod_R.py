@@ -22,6 +22,7 @@ def busmodel(GenIq, GenId, Iin, Iout):
     """
     pi = math.pi
 
+    VIR_RES_pu = 84033          #value of virtual resistance
 
 
     Iinq = Iin[0]
@@ -40,7 +41,7 @@ def busmodel(GenIq, GenId, Iin, Iout):
     # IsQ = (+Isq * np.cos(delta) - Isd * np.sin(delta))
     # IsD = (+Isq * np.sin(delta) + Isd * np.cos(delta))
 
-    F[0] = ((GenIq + Iinq) - (Ioutq)) * 84033           # Magnitude of virtual resistance in PU (84033 pu for a resistance of 10k Ohm)
-    F[1] = ((GenId + Iind) - (Ioutd)) * 84033           # Magnitude of virtual resistance in PU (84033 pu for a resistance of 10k Ohm)
+    F[0] = ((GenIq + Iinq) - (Ioutq)) * VIR_RES_pu
+    F[1] = ((GenId + Iind) - (Ioutd)) * VIR_RES_pu
 
     return F
