@@ -33,7 +33,7 @@ The paremeters for the Microgrid are given as follows
 
 # Simulation Case Files #
 
-The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances. The Exec.py will execute the case and generate the responses and eigenvalues of the system. The relevant libraries to be installed are shown in the heading of each file. 
+The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances. The Exec.py will execute the case and generate the responses and eigenvalues of the system. The relevant libraries to be installed are shown in the heading of each file and are listed below. 
 
 The following dependencies are required for running the case files.
 
