@@ -22,7 +22,7 @@ def busmodel(GenIq, GenId, Iin, Iout):
     """
     pi = math.pi
 
-    VIR_RES_pu = 84033         #value of virtual resistance
+    VIR_RES_pu = 84033         #value of virtual resistance in pu (84033 = 10 kOhm)
 
 
     Iinq = Iin[0]
