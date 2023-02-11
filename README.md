@@ -23,16 +23,30 @@ The paremeters for the Microgrid are given as follows
 
 |                                     |        |                                      |       |
 |-------------------------------------|--------|--------------------------------------|-------|
-| $\rm{Line Resistance}$ $(R_{\rm{mn}}) $    | 0.502  | $\rm{Line inductance}$ $(L_{\rm{mn}})$     | 0.512 |
-| $\rm{Load Resistance}$ $(R_{\rm{load}{n}})$ | 44.528 | $\rm{Load inductance}$ $(L_{\rm{load}{n}})$ | 26.55 |
+| $\rm{Line}$ $\rm{Resistance}$ $(R_{\rm{mn}}) $    | 0.502  | $\rm{Line}$ $\rm{inductance}$ $(L_{\rm{mn}})$     | 0.512 |
+| $\rm{Load}$ $\rm{Resistance}$ $(R_{\rm{load}{n}})$ | 44.528 | $\rm{Load}$ $\rm{inductance}$ $(L_{\rm{load}{n}})$ | 26.55 |
 
 # Symbolic Matrix generation #
 
-The symcalc_4conv.py contains the code to generate the Matrix for 4 converter microgrid example without virtual resistances as shown in figure 1 of the Publication. 
-The symcalc_Generalized.py contains the code to generate the Matrix the converter system with 8 converters provided in Figure 6 of the Publication.
+1. The symcalc_4conv.py contains the code to generate the Matrix for 4 converter microgrid example without virtual resistances as shown in figure 1 of the Publication. 
+2. The symcalc_Generalized.py contains the code to generate the Matrix the converter system with 8 converters provided in Figure 6 of the Publication.
 
 # Simulation Case Files #
 
-The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances. The Exec.py will execute the case. The relevant libraries to be installed are shown in the heading of each file. 
+The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances. The Exec.py will execute the case and generate the responses and eigenvalues of the system. The relevant libraries to be installed are shown in the heading of each file. 
+
+The following dependencies are required for running the case files.
+
+* numpy  {1.20.3 (defaults/win-64) 
+* numba  {0.54.1 (defaults/win-64)
+* scipy  {1.7.1  (defaults/win-64)} 
+* math
+* Threading
+* time
+* pyqtgraph  {0.11.0 (anaconda/noarch) 
+* pysimplegui-4.56.0 (conda-forge/noarch) 
+* pandas  {1.3.4 (defaults/win-64)}
+* sympy  {1.9 (defaults/win-64)}
+* plotly-5.5.0 (plotly/noarch)
 
 
