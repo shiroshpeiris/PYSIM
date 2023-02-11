@@ -26,7 +26,7 @@ The paremeters for the Microgrid are given as follows, the paremetrs are same fo
 | $\rm{Line}$ $\rm{Resistance}$ $(R_{\rm{mn}}) $    | 0.502  | $\rm{Line}$ $\rm{inductance}$ $(L_{\rm{mn}})$     | 0.512 |
 | $\rm{Load}$ $\rm{Resistance}$ $(R_{\rm{load}{n}})$ | 44.528 | $\rm{Load}$ $\rm{inductance}$ $(L_{\rm{load}{n}})$ | 26.55 |
 
-# Symbolic Matrix generation #
+# Generating State space model of Microgrid Network using symbolic tools
 
 1. The ___symcalc_4conv.py___ contains the code to generate the Matrix of coefficents in the microgrid network with 4 converters without virtual resistances as shown in figure 1 of the Publication. 
 2. The ___symcalc_Generalized.py___ contains the code to generate the Matrix of coefficents in the microgrid network with 8 converters provided in figure 6 of the Publication.
