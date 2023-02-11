@@ -330,7 +330,6 @@ def systemfunc():
     end = time.time()
     print(end - start)
 
-
 def controlgui():
     def paramset_gui(params, params_labels, parsetno):
 
