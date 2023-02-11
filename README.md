@@ -25,4 +25,4 @@ The paremeters for the Microgrid are given as follows
 
 
 
-The Folders contain the python simulation cases for the Microgrid model with and without virtual resistances.
+The Folders contain the python simulation cases for the Microgrid model with (VIR_RES_SYS) and without(NO_VIR_RES) virtual resistances.
