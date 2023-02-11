@@ -28,8 +28,8 @@ The paremeters for the Microgrid are given as follows
 
 # Symbolic Matrix generation #
 
-1. The ___symcalc_4conv.py___ contains the code to generate the Matrix for 4 converter microgrid example without virtual resistances as shown in figure 1 of the Publication. 
-2. The ___symcalc_Generalized.py___ contains the code to generate the Matrix the converter system with 8 converters provided in figure 6 of the Publication.
+1. The ___symcalc_4conv.py___ contains the code to generate the Matrix of coefficents in the microgrid network with 4 converters without virtual resistances as shown in figure 1 of the Publication. 
+2. The ___symcalc_Generalized.py___ contains the code to generate the Matrix of coefficents in the microgrid network with 8 converters provided in figure 6 of the Publication.
 
 # Simulation Case Files #
 
