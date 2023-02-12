@@ -1,11 +1,14 @@
 from sympy import *
 import numpy as np
-from PUdefs import *
 
-TF_line = np.array([0.00369,0.00454, 0.00061], dtype=float)
-String_Line = np.array([0.000502, 0.000512,0.00005], dtype=float)
-Conv_Line = np.array([0.005, 0.04e-3], dtype=float)
 
+#========per unitization of parameters for the microgrid model=================
+
+VratedLLrmsHV=34.5
+MVAbase=100
+Wrated=376.991
+VratedLLrmsLV=0.69
+VratedPhrmsHV = VratedLLrmsHV / np.sqrt(3)
 Wbase = Wrated
 
 VbaseLV = (VratedLLrmsLV * np.sqrt(2)) / (np.sqrt(3))
@@ -17,6 +20,11 @@ ZbaseHV = (VratedLLrmsHV ** 2) / MVAbase
 LbaseHV = ZbaseHV / Wrated
 CbaseHV = 1 / (Wrated * ZbaseHV)
 
+
+
+TF_line = np.array([0.00369,0.00454], dtype=float)
+String_Line = np.array([0.000502, 0.000512], dtype=float)
+Conv_Line = np.array([0.005, 0.04e-3], dtype=float)
 
 
 Rg = TF_line[0]
@@ -34,7 +42,6 @@ R121 = 1 * Conv_Line[0]/ZbaseLV
 R122 = 4 * Conv_Line[0]/ZbaseLV
 
 
-
 R2 = String_Line[0] * 3
 
 R21 = String_Line[0] * 3
@@ -44,7 +51,6 @@ R212 = 2 * Conv_Line[0]/ZbaseLV
 R22 = String_Line[0] * 3
 R221 = 5 * Conv_Line[0]/ZbaseLV
 R222 = 6 * Conv_Line[0]/ZbaseLV
-
 
 
 
@@ -70,27 +76,6 @@ L221 = 5 * Conv_Line[1]/LbaseLV + 0.05 * 50
 L222 = 6 * Conv_Line[1]/LbaseLV + 0.05 * 50
 
 
-
-
-
-
-
-#
-# R1 = 1 * Conv_Line[0]/ZbaseLV
-# R2 = 4 * Conv_Line[0]/ZbaseLV
-# R3 = 7 * Conv_Line[0]/ZbaseLV
-# R4 = 2 * Conv_Line[0]/ZbaseLV
-# R5 = 3 * Conv_Line[0]/ZbaseLV
-#
-# L1 = 1 * Conv_Line[1]/LbaseLV + 0.05 * 50
-# L2 = 4 * Conv_Line[1]/LbaseLV + 0.05 * 50
-# L3 = 7 * Conv_Line[1]/LbaseLV + 0.05 * 50
-# L4 = 2 * Conv_Line[1]/LbaseLV + 0.05 * 50
-# L5 = 3 * Conv_Line[1]/LbaseLV + 0.05 * 50
-
-
-
-
 Vg,V0,V1,V2,V11,V111,V112,V12,V121,V122,V21,V211,V212,V22,V221,V222 = symbols('Vg,V0,V1,V2,V11,V111,V112,V12,V121,V122,V21,V211,V212,V22,V221,V222')
 Ig,I1,I2,I11,I111,I112,I12,I121,I122,I21,I211,I212,I22,I221,I222 = symbols('Ig,I1,I2,I11,I111,I112,I12,I121,I122,I21,I211,I212,I22,I221,I222')
 dIg,dI1,dI2,dI11,dI111,dI112,dI12,dI121,dI122,dI21,dI211,dI212,dI22,dI221,dI222  = symbols('dIg,dI1,dI2,dI11,dI111,dI112,dI12,dI121,dI122,dI21,dI211,dI212,dI22,dI221,dI222 ')
@@ -98,7 +83,7 @@ dIg,dI1,dI2,dI11,dI111,dI112,dI12,dI121,dI122,dI21,dI211,dI212,dI22,dI221,dI222 
 I11 = I111 + I112
 I12 = I121 + I122
 I1 = I11 + I12
-
+Ig = I121+I122+I21+I211+I212+I22+I221+I222
 
 I21 = I211 + I212
 I22 = I221 + I222
@@ -114,9 +99,6 @@ V12 = (L12/Wrated) * dI12 + V1 + R12*I12
 
 V21 = (L21/Wrated) * dI21 + V2 + R21*I21
 V22 = (L22/Wrated) * dI22 + V2 + R22*I22
-
-
-
 
 
 #=================I1 Branch=================================
@@ -159,7 +141,6 @@ eqdI2 = dI21_[0] + dI22_[0] - dI2
 
 dI2_ = solve(eqdI2, dI2)
 
-# print(dI2)
 
 #=================Ig Branch=================================
 
@@ -169,7 +150,6 @@ eqdIg = dI1_[0] + dI2_[0] - dIg
 #-----solve for Ig--------
 dIg_ = solve(eqdIg, dIg)
 
-# print(dIg_)
 
 #=================Substitute dIg for Branch Current derivatives=================================
 
@@ -196,19 +176,19 @@ dI221__ = dI221.subs(dIg,dIg_[0]).subs(dI2,dI2__).subs(dI22,dI22__)
 dI222__ = dI222.subs(dIg,dIg_[0]).subs(dI2,dI2__).subs(dI22,dI22__)
 
 
+#----state space model of the generalized system------
 
-
-# print(dI111__)
-# print(dI112__)
-# print(dI121__)
-# print(dI122__)
-# print(dI211__)
-# print(dI212__)
-# print(dI221__)
-# print(dI222__)
+print("dI111=",dI111__)
+print("dI112=",dI112__)
+print("dI121=",dI121__)
+print("dI122=",dI122__)
+print("dI211=",dI211__)
+print("dI212=",dI212__)
+print("dI221=",dI221__)
+print("dI222=",dI222__)
 #
 
-
+#----obtaining the coefficents of the elements of state equations to form the A matrix------
 
 dI111_C = [dI111__.coeff(Ig),
            dI111__.coeff(I111),dI111__.coeff(I112),dI111__.coeff(I121),dI111__.coeff(I122),
@@ -276,12 +256,8 @@ dIg_C =   [dIg_.coeff(Ig),
            dIg_.coeff(V211),dIg_.coeff(V212),dIg_.coeff(V221),dIg_.coeff(V222)]
 
 
-#
-#
-# # print(dI11_C)
-#
+
 LV_gridparams = np.concatenate((dIg_C,dI111_C,dI112_C,dI121_C,dI122_C,dI211_C,dI212_C,dI221_C,dI222_C))
 #
 LV_gridparams = np.array(LV_gridparams, dtype=np.float32)
 #
-# print(LV_gridparams)
