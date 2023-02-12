@@ -21,12 +21,15 @@ LbaseHV = ZbaseHV / Wrated
 CbaseHV = 1 / (Wrated * ZbaseHV)
 
 
+#---parameters for the microgrid-------
+TF_line = np.array([0.00369,0.00454], dtype=float)                          # Parameters for the uppermost branch
+String_Line = np.array([0.000502, 0.000512], dtype=float)                   # Parameters for the  Microgrid models
+Conv_Line = np.array([0.005, 0.04e-3], dtype=float)                         # Parameters for the converter LV line
+X_LVtf = 0.05
 
-TF_line = np.array([0.00369,0.00454], dtype=float)
-String_Line = np.array([0.000502, 0.000512], dtype=float)
-Conv_Line = np.array([0.005, 0.04e-3], dtype=float)
 
 
+#----asigning the parameters to the system-------
 Rg = TF_line[0]
 Lg = TF_line[1]
 
@@ -57,24 +60,25 @@ R222 = 6 * Conv_Line[0]/ZbaseLV
 L1 = String_Line[1] * 2
 
 L11 = String_Line[1] * 3
-L111 = 3 * Conv_Line[1]/LbaseLV + 0.05 * 50
-L112 = 9 * Conv_Line[1]/LbaseLV + 0.05 * 50
+L111 = 3 * Conv_Line[1]/LbaseLV + X_LVtf * 50
+L112 = 9 * Conv_Line[1]/LbaseLV + X_LVtf * 50
 
 L12 = String_Line[1] * 3
-L121 = 1 * Conv_Line[1]/LbaseLV + 0.05 * 50
-L122 = 4 * Conv_Line[1]/LbaseLV + 0.05 * 50
+L121 = 1 * Conv_Line[1]/LbaseLV + X_LVtf * 50
+L122 = 4 * Conv_Line[1]/LbaseLV + X_LVtf * 50
 
 
 L2 = String_Line[1] * 3
 
 L21 = String_Line[1] * 3
-L211 = 7 * Conv_Line[1]/LbaseLV + 0.05 * 50
-L212 = 2 * Conv_Line[1]/LbaseLV + 0.05 * 50
+L211 = 7 * Conv_Line[1]/LbaseLV + X_LVtf * 50
+L212 = 2 * Conv_Line[1]/LbaseLV + X_LVtf * 50
 
 L22 = String_Line[1] * 3
-L221 = 5 * Conv_Line[1]/LbaseLV + 0.05 * 50
-L222 = 6 * Conv_Line[1]/LbaseLV + 0.05 * 50
+L221 = 5 * Conv_Line[1]/LbaseLV + X_LVtf * 50
+L222 = 6 * Conv_Line[1]/LbaseLV + X_LVtf * 50
 
+#--------symbolic definitions of the state space variables----------------
 
 Vg,V0,V1,V2,V11,V111,V112,V12,V121,V122,V21,V211,V212,V22,V221,V222 = symbols('Vg,V0,V1,V2,V11,V111,V112,V12,V121,V122,V21,V211,V212,V22,V221,V222')
 Ig,I1,I2,I11,I111,I112,I12,I121,I122,I21,I211,I212,I22,I221,I222 = symbols('Ig,I1,I2,I11,I111,I112,I12,I121,I122,I21,I211,I212,I22,I221,I222')
@@ -120,7 +124,6 @@ eqdI1 = dI11_[0] + dI12_[0] - dI1
 
 dI1_ = solve(eqdI1, dI1)
 
-# print(dI1)
 
 #=================I2 Branch=================================
 dI211 = (Wrated/L211) * (V211 - V21 - R211*I211)
@@ -141,9 +144,7 @@ eqdI2 = dI21_[0] + dI22_[0] - dI2
 
 dI2_ = solve(eqdI2, dI2)
 
-
 #=================Ig Branch=================================
-
 
 eqdIg = dI1_[0] + dI2_[0] - dIg
 
