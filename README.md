@@ -1,6 +1,6 @@
 # PYSIM- Microgrid Model
 This Repository contains the Python models used to Simulate the Microgrid with and without the virtual resistances. 
-The complete models used to generate the  simulation results in the publication are provided in this repository.
+The complete grid forming converter models, and the microgrid network models used to generate the  simulation results in the publication are provided in this repository.
 
 # Parameteres for Converters and Microgrid #
 The parameters for the Converters are given below
