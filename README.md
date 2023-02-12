@@ -37,8 +37,10 @@ The paremeters for the Microgrid are given as follows, the parameters are same f
 
 # Simulation Case Files #
 
-The Folders contain the python simulation cases for the Microgrid model with __(VIR_RES_SYS)__ and without __(NO_VIR_RES)__ virtual resistances. The ___Exec.py___ will execute the case and generate the responses and eigenvalues of the system. 
-For the case with virtual resistances, the value of virtual resistance can be changed ___in Bus_mod_R.py___ in __(VIR_RES_SYS)__.
+The Folders contain the python simulation cases.The ___Exec.py___ will execute the case and generate the responses and eigenvalues of the system. 
+1. For the Microgrid model with virtual resistances the simulation case files are stored in__(VIR_RES_SYS)__.the value of virtual resistance can be changed ___in Bus_mod_R.py___
+2. For the proposed Microgrid model without virtual resistances the simulation case files are stored in __(NO_VIR_RES)__ virtual resistances. 
+3. The case files for the generalized case using the proposed method without virtual resistances is in __(Generalized Case)__ folder.
 
 The relevant dependencies to be installed are in the heading of each file and are listed below.
 
