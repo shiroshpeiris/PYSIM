@@ -25,8 +25,8 @@ The parameters for the Converters are given below
 
 The paremeters for the Microgrid are given as follows, the parameters are same for all load elements and line segments
 
-|                                     |        |                                      |       |
-|-------------------------------------|--------|--------------------------------------|-------|
+| **Microgrid Parameters (pu)**        |        |                                       |       |
+|:-------------------------------------|:------:|:--------------------------------------|:-----:|
 | $\rm{Line}$ $\rm{Resistance}$ $(R_{\rm{mn}}) $    | 0.502  | $\rm{Line}$ $\rm{inductance}$ $(L_{\rm{mn}})$     | 0.512 |
 | $\rm{Load}$ $\rm{Resistance}$ $(R_{\rm{load}{n}})$ | 44.528 | $\rm{Load}$ $\rm{inductance}$ $(L_{\rm{load}{n}})$ | 26.55 |
 
