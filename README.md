@@ -1,5 +1,6 @@
 # PYSIM- Microgrid Model
 This Repository contains the Python models used to Simulate the Microgrid with and without The virtual resistances. 
+The complete models used to generate the  simulation results in the publication are provided in this repository.
 
 # Parameteres for Converters and Microgrid #
 The parameters for the Converters are given below
@@ -38,7 +39,7 @@ The paremeters for the Microgrid are given as follows, the parameters are same f
 # Simulation Case Files #
 
 The Folders contain the python simulation cases.The ___Exec.py___ will execute the case and generate the responses and eigenvalues of the system. 
-1. For the Microgrid model with virtual resistances the simulation case files are stored in __(VIR_RES_SYS)__ .The value of virtual resistance can be changed ___in Bus_mod_R.py___
+1. For the Microgrid model with virtual resistances the simulation case files are stored in __(VIR_RES_SYS)__ .The value of virtual resistance can be changed in ___Bus_mod_R.py___
 2. For the proposed Microgrid model without virtual resistances the simulation case files are stored in __(NO_VIR_RES)__ virtual resistances. 
 3. The case files for the generalized case using the proposed method without virtual resistances is in __(Generalized Case)__ folder.
 
