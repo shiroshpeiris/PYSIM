@@ -43,7 +43,7 @@ The Folders contain the python simulation cases.The ___Exec.py___ will execute t
 2. For the proposed Microgrid model without virtual resistances the simulation case files are stored in __(NO_VIR_RES)__ virtual resistances. 
 3. The case files for the generalized case using the proposed method without virtual resistances is in __(Generalized Case)__ folder.
 
-The relevant dependencies to be installed are in the heading of each file and are listed below.
+The relevant dependencies to be installed are in the heading of each file and are listed below. They can be installed through __pip__ or __anaconda__ packages. 
 
 * numpy  {1.20.3 (defaults/win-64) 
 * numba  {0.54.1 (defaults/win-64)
